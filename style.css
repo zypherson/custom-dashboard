@@ -10,3 +10,27 @@ body {
     gap: 20px;
   }
   
+  body {
+    font-family: Arial, sans-serif;
+    padding: 1rem;
+    background: #f0f0f0;
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  #dashboard {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .widget {
+    background: white;
+    border-radius: 8px;
+    padding: 1rem;
+    width: 250px;
+    text-align: center;
+  }
