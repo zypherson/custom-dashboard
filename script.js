@@ -31,4 +31,28 @@ const quotes = [
   }
   
   displayQuote();
+
+ 
+async function fetchQuote() {
+    try {
+      const res = await fetch('https://api.quotable.io/random');
+      if (!res.ok) throw new Error('Quote not found');
+      const data = await res.json();
+  
+      return `"${data.content}"<br>— ${data.author}`;
+    } catch (err) {
+      return 'Could not load quote at this time.';
+    }
+  }
+  
+ 
+  async function addQuoteWidget() {
+    const content = await fetchQuote();
+    const quoteWidget = createWidget('Daily Quote', content);
+    document.getElementById('dashboard').appendChild(quoteWidget);
+  }
+  
+  
+  addQuoteWidget();
+  
   
